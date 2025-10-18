@@ -4,7 +4,14 @@ import { drizzle } from 'drizzle-orm/neon-serverless';
 import ws from "ws";
 import * as schema from "@shared/schema";
 
+// Configure WebSocket for serverless environments
 neonConfig.webSocketConstructor = ws;
+neonConfig.fetchConnectionCache = true;
+
+// Configure for local Replit database with self-signed certificates
+if (process.env.NODE_ENV === 'development') {
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+}
 
 if (!process.env.DATABASE_URL) {
   throw new Error(
