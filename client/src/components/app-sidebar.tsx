@@ -1,7 +1,6 @@
 import { 
   BookOpen, 
   Users, 
-  GraduationCap, 
   Award, 
   BarChart3,
   UserCog,
@@ -22,6 +21,7 @@ import {
   SidebarHeader,
 } from "@/components/ui/sidebar";
 import { useAuth } from "@/hooks/useAuth";
+import logoImage from "@assets/uniscore-logo.png";
 
 export function AppSidebar() {
   const [location] = useLocation();
@@ -82,12 +82,8 @@ export function AppSidebar() {
   return (
     <Sidebar data-testid="sidebar-main">
       <SidebarHeader className="border-b p-4">
-        <div className="flex items-center gap-2">
-          <GraduationCap className="h-6 w-6 text-primary" />
-          <div>
-            <h2 className="text-lg font-semibold">PDP University</h2>
-            <p className="text-xs text-muted-foreground">Monitoring Platform</p>
-          </div>
+        <div className="flex items-center gap-3">
+          <img src={logoImage} alt="UniScore Company" className="h-8 w-auto" />
         </div>
       </SidebarHeader>
       <SidebarContent>

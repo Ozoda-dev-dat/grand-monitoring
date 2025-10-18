@@ -2,9 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { GraduationCap, Award, Code, BarChart3 } from "lucide-react";
+import { Award, Code, BarChart3, Users } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import logoImage from "@assets/uniscore-logo.png";
 
 export default function Landing() {
   const [username, setUsername] = useState("");
@@ -50,7 +51,7 @@ export default function Landing() {
         <div className="flex flex-col items-center justify-center space-y-8 text-center">
           <div className="space-y-4">
             <div className="flex justify-center">
-              <GraduationCap className="h-16 w-16 text-primary" />
+              <img src={logoImage} alt="UniScore Company" className="h-24 w-auto" />
             </div>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
               PDP University
@@ -92,7 +93,7 @@ export default function Landing() {
                 </div>
                 <div className="flex flex-col items-center space-y-2 text-center">
                   <div className="rounded-full bg-primary/10 p-3">
-                    <GraduationCap className="h-6 w-6 text-primary" />
+                    <Users className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="font-semibold">Multi-Role Access</h3>
                   <p className="text-sm text-muted-foreground">
